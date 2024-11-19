@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const productName = params.get("product");
+        const productPrice = params.get("price");
+
+        // Mostrar el producto y precio en la página de compra
+        window.onload = function() {
+            document.getElementById("product-name").textContent = productName;
+            document.getElementById("product-price").textContent = productPrice;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo" aria-label="Tech Store">Tech Store</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="smartphones.html">Smartphones</a></li>
+                <li><a href="tablets.html">Tablets</a></li>
+                <li><a href="audio.html">Audio y Sonido</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="order-details">
+            <h2>Detalles de tu compra</h2>
+            <div class="order-summary">
+                <p><strong>Producto:</strong> <span id="product-name"></span></p>
+                <p><strong>Precio:</strong> $<span id="product-price"></span></p>
+                <h3>¿Deseas confirmar tu compra?</h3>
+                <a href="confirmacion.html?product=" class="cta-btn">Confirmar Compra</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Store. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Tech Store</title>
+    <link rel="stylesheet" href="css/style-checkout.css">
+</head>
+<body>
+    <header>
+        <div class="logo" aria-label="Tech Store">Tech Store</div>
+    </header>
+
+    <main>
+        <section class="invoice">
+            <h2>Factura de Compra</h2>
+            <p><strong>Nombre:</strong> <span id="invoice-name"></span></p>
+            <p><strong>Dirección de Envío:</strong> <span id="invoice-address"></span></p>
+            <p><strong>Producto:</strong> <span id="invoice-product"></span></p>
+            <p><strong>Precio:</strong> $<span id="invoice-price"></span></p>
+
+            <h3>¡Gracias por tu compra!</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Obtener los datos del formulario de compra (usualmente estos se enviarían al servidor)
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+        const address = params.get("address");
+        const product = params.get("product");
+        const price = params.get("price");
+
+        // Mostrar los datos de la factura
+        document.getElementById("invoice-name").textContent = name;
+        document.getElementById("invoice-address").textContent = address;
+        document.getElementById("invoice-product").textContent = product;
+        document.getElementById("invoice-price").textContent = price;
+    </script>
+</body>
+</html>
